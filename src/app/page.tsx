@@ -107,12 +107,15 @@ export default function Home() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-cyan/95 backdrop-blur-xl shadow-xl py-1' : 'bg-transparent py-2 sm:py-3'}`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-cyan/95 backdrop-blur-xl shadow-xl py-3' : 'bg-transparent py-5 sm:py-6'}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="relative w-56 h-24 sm:w-72 sm:h-32 md:w-96 md:h-40 lg:w-[500px] lg:h-[160px] -my-8 sm:-my-12 transition-transform drop-shadow-lg scale-100 sm:scale-110 lg:scale-125 origin-left">
-              <Image src={LOGO_SRC} alt="Logo" fill className="object-contain object-left" priority />
+          <div className="flex items-center gap-0 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="relative w-28 h-24 sm:w-36 sm:h-32 md:w-48 md:h-40 lg:w-[250px] lg:h-[160px] -my-8 sm:-my-12 transition-transform drop-shadow-lg scale-100 sm:scale-110 lg:scale-125 origin-left">
+              <Image src={LOGO_SRC} alt="Logo Central" fill className="object-contain object-left" priority />
+            </div>
+            <div className="relative w-12 h-10 sm:w-16 sm:h-12 md:w-20 md:h-16 lg:w-[100px] lg:h-[55px] -my-1 sm:-my-3 -ml-6 sm:-ml-10 md:-ml-12 lg:-ml-16 transition-transform drop-shadow-lg scale-100 sm:scale-110 lg:scale-110 origin-left">
+              <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain object-left" priority />
             </div>
           </div>
           <nav className="hidden lg:flex gap-6 font-bold text-white text-lg">
@@ -605,8 +608,13 @@ export default function Home() {
             
             {/* Column 1 — Logo & Description */}
             <div className="flex flex-col items-center md:items-start">
-              <div className="relative w-36 h-36 mb-6 drop-shadow-2xl">
-                <Image src={LOGO_SRC} alt="Logo Declare Seu Amor" fill className="object-contain" />
+              <div className="flex items-center gap-2 sm:gap-4 mb-6">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 drop-shadow-2xl">
+                  <Image src={LOGO_SRC} alt="Logo Declare Seu Amor" fill className="object-contain" />
+                </div>
+                <div className="relative w-28 h-20 sm:w-32 sm:h-24 drop-shadow-2xl">
+                  <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain" />
+                </div>
               </div>
               <p className="text-sm text-white/50 font-medium leading-relaxed text-center md:text-left max-w-xs">
                 Campanha Municipal de incentivo à destinação do Imposto de Renda para crianças, adolescentes e idosos de Porto Velho.
