@@ -7,12 +7,12 @@ import Autoplay from 'embla-carousel-autoplay';
 import { ChevronDown, CheckCircle2, Video, Info, FileText, ArrowRight, HandHeart, Play, ChevronLeft, ChevronRight, Heart, Calculator } from 'lucide-react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
-const CAROUSEL_IMAGES = [
-  "/images/carousel-1.png",
-  "/images/carousel-2.png",
-  "/images/carousel-3.png",
-  "/images/carousel-4.png",
-  "/images/carousel-5.png",
+const CAROUSEL_ITEMS = [
+  { type: "image", src: "/images/carousel-1.png" },
+  { type: "video", src: "/videos/declare_ate_29.mp4" },
+  { type: "video", src: "/videos/destine_6.mp4" },
+  { type: "video", src: "/videos/custo_zero.mp4" },
+  { type: "video", src: "/videos/seu_amor.mp4" },
 ];
 
 const LOGO_SRC = "/images/Whisk_a56ed57694ceb3287694a268dc33ef3bdr-removebg-preview.svg";
@@ -227,17 +227,28 @@ export default function Home() {
                ref={emblaRef}
             >
               <div className="embla__container flex touch-pan-y cursor-grab active:cursor-grabbing">
-                {CAROUSEL_IMAGES.map((src, index) => (
+                {CAROUSEL_ITEMS.map((item, index) => (
                   <div key={index} className="embla__slide flex-[0_0_100%] min-w-0">
                     <div className="relative w-full h-full flex justify-center items-center p-2 sm:p-5">
-                      <Image
-                        src={src}
-                        alt={`Campanha Declare seu Amor - Banner ${index + 1}`}
-                        width={1920}
-                        height={1080}
-                        className="w-full h-auto object-contain rounded-xl md:rounded-[2rem] shadow-lg"
-                        priority={index <= 1}
-                      />
+                      {item.type === "video" ? (
+                        <video
+                          src={item.src}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="w-full h-auto object-contain rounded-xl md:rounded-[2rem] shadow-lg"
+                        />
+                      ) : (
+                        <Image
+                          src={item.src}
+                          alt={`Campanha Declare seu Amor - Banner ${index + 1}`}
+                          width={1920}
+                          height={1080}
+                          className="w-full h-auto object-contain rounded-xl md:rounded-[2rem] shadow-lg"
+                          priority={index <= 1}
+                        />
+                      )}
                     </div>
                   </div>
                 ))}

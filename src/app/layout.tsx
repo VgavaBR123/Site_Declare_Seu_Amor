@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Preloader from "@/components/Preloader";
 
 const pally = localFont({
   src: [
@@ -19,6 +20,16 @@ const pally = localFont({
       weight: "700",
       style: "normal",
     },
+    {
+      path: "../../public/font/Pally_Complete/Pally_Complete/Fonts/OTF/Pally-Bold.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Pally_Complete/Pally_Complete/Fonts/OTF/Pally-Bold.otf",
+      weight: "900",
+      style: "normal",
+    },
   ],
   variable: "--font-pally",
 });
@@ -35,7 +46,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${pally.variable} antialiased scroll-smooth`} suppressHydrationWarning>
-      <body className="font-sans text-slate-800 bg-slate-50" suppressHydrationWarning>{children}</body>
+      <body className="font-sans text-slate-800 bg-slate-50" suppressHydrationWarning>
+        <Preloader />
+        {children}
+      </body>
     </html>
   );
 }
