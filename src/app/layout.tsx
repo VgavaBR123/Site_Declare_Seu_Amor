@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
+import { Analytics } from "@vercel/analytics/next";
 
 const pally = localFont({
   src: [
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className="font-sans text-slate-800 bg-slate-50" suppressHydrationWarning>
         <Preloader />
         {children}
+        <Analytics />
       </body>
     </html>
   );
