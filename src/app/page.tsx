@@ -128,12 +128,12 @@ export default function Home() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://servicos.receitafederal.gov.br/"
+            href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center bg-brand-yellow text-slate-900 font-extrabold px-5 py-3 sm:px-8 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,212,0,0.5)] hover:bg-yellow-300 transition-colors text-sm sm:text-base uppercase tracking-wider gap-2"
           >
-            Portal da Receita <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            Baixe o Programa <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </motion.a>
         </div>
       </motion.header>
@@ -181,7 +181,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-yellow/0 via-brand-yellow/10 to-brand-yellow/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-yellow to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="text-white font-black leading-tight text-lg sm:text-xl md:text-2xl transition-all duration-300 relative z-10 group-hover:-translate-y-1">
-                  Sem custo extra e sem perder nada na restituição!
+                  Sem custo extra e você ainda recebe o valor de volta com correção!
                 </h3>
               </motion.div>
 
@@ -310,7 +310,7 @@ export default function Home() {
                 </motion.div>
               </div>
               <p className="text-slate-900 text-base sm:text-xl font-black leading-tight tracking-tight">
-                A declaração precisa ser feita <span className="text-brand-cyan underline decoration-brand-yellow/30 underline-offset-4">exclusivamente</span> pelo site ou aplicativo da Receita Federal!
+                A declaração precisa ser feita <span className="text-brand-cyan underline decoration-brand-yellow/30 underline-offset-4">exclusivamente</span> pelo aplicativo ou programa da Receita Federal
               </p>
             </motion.div>
 
@@ -374,12 +374,12 @@ export default function Home() {
                 </div>
                 <p className="text-xs sm:text-sm font-black text-white mb-3 leading-snug">Pronto! Declare agora.</p>
                 <a
-                  href="https://servicos.receitafederal.gov.br/"
+                  href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer bg-brand-yellow text-slate-900 font-black px-4 py-2 rounded-full shadow-lg hover:bg-white transition-colors text-xs sm:text-sm flex items-center gap-1 hover:scale-105 active:scale-95"
                 >
-                  Receita Federal <ArrowRight className="w-3 h-3" />
+                  Baixe o Programa <ArrowRight className="w-3 h-3" />
                 </a>
               </motion.div>
             </div>
@@ -627,12 +627,12 @@ export default function Home() {
               </div>
               <h3 className="text-3xl font-black mb-6">Pronto para transformar sua cidade?</h3>
               <a
-                href="https://servicos.receitafederal.gov.br/"
+                href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-brand-yellow text-slate-900 font-black text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,212,0,0.6)] hover:bg-white transition-colors gap-3 hover:scale-105 active:scale-95"
               >
-                Acessar Portal da Receita <ArrowRight className="w-6 h-6" />
+                Baixe o Programa <ArrowRight className="w-6 h-6" />
               </a>
             </motion.div>
           </div>
@@ -670,8 +670,8 @@ export default function Home() {
                 <a href="#faq" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" /> Dúvidas frequentes
                 </a>
-                <a href="https://servicos.receitafederal.gov.br/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3" /> Serviços da Receita Federal
+                <a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
+                  <ArrowRight className="w-3 h-3" /> Baixe o Programa
                 </a>
                 <a href="https://www.tjro.jus.br/declareseuamor" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" /> Site Oficial TJRO
