@@ -8,7 +8,7 @@ import { ChevronDown, CheckCircle2, Video, Info, FileText, ArrowRight, HandHeart
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 const CAROUSEL_ITEMS = [
-  { type: "image", src: "/images/carousel-1.png" },
+  { type: "video", src: "/videos/Do_Imposto_ao_Afeto_version_1.mp4" },
   { type: "video", src: "/videos/declare_ate_29.mp4" },
   { type: "video", src: "/videos/destine_6.mp4" },
   { type: "video", src: "/videos/custo_zero.mp4" },
@@ -70,7 +70,7 @@ export default function Home() {
     "Selecione para qual fundo deseja destinar: “Criança e Adolescente” ou “Idoso”.",
     "Em seguida, procure por \"fundo municipal de Porto Velho\".",
     "Digite o valor desejado (até 3% p/ cada fundo).",
-    "O sistema debita do imposto a pagar ou soma na restituição!"
+    "Para concluir, gere o DARF e efetue o pagamento.\n\n(Em caso de restituição, você receberá de volta. Se houver imposto a pagar, o valor pago será abatido)"
   ];
 
   const cards = [
@@ -128,12 +128,12 @@ export default function Home() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda"
+            href="https://servicos.receitafederal.gov.br/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center bg-brand-yellow text-slate-900 font-extrabold px-5 py-3 sm:px-8 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,212,0,0.5)] hover:bg-yellow-300 transition-colors text-sm sm:text-base uppercase tracking-wider gap-2"
           >
-            Destinar <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            Portal da Receita <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </motion.a>
         </div>
       </motion.header>
@@ -286,6 +286,34 @@ export default function Home() {
               <p className="text-sm sm:text-lg text-slate-500 font-medium">Siga estes passos durante a sua declaração do Imposto de Renda.</p>
             </motion.div>
 
+            {/* Alerta Importante */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl mx-auto mb-12 p-5 sm:p-6 bg-brand-yellow/10 border-2 border-brand-yellow/50 rounded-3xl flex items-center gap-5 shadow-lg relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 blur-3xl -z-10 group-hover:bg-brand-yellow/20 transition-all duration-700"></div>
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center shadow-[0_5px_15px_rgba(255,212,0,0.4)]">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 5, -5, 0]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Info className="text-slate-950 w-7 h-7" />
+                </motion.div>
+              </div>
+              <p className="text-slate-900 text-base sm:text-xl font-black leading-tight tracking-tight">
+                A declaração precisa ser feita <span className="text-brand-cyan underline decoration-brand-yellow/30 underline-offset-4">exclusivamente</span> pelo site ou aplicativo da Receita Federal!
+              </p>
+            </motion.div>
+
             {/* Steps Grid — Row 1: Steps 1-4 */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-4 sm:mb-5">
               {steps.slice(0, 4).map((step, idx) => (
@@ -302,7 +330,7 @@ export default function Home() {
                   <h3 className="text-3xl sm:text-4xl font-black text-brand-cyan mb-2 leading-none">
                     {String(idx + 1).padStart(2, '0')}
                   </h3>
-                  <p className="text-sm sm:text-base font-bold text-slate-700 leading-snug">
+                  <p className="text-sm sm:text-base font-bold text-slate-700 leading-snug whitespace-pre-line">
                     {step}
                   </p>
                 </motion.div>
@@ -325,7 +353,7 @@ export default function Home() {
                   <h3 className="text-3xl sm:text-4xl font-black text-brand-yellow mb-2 leading-none">
                     {String(idx + 5).padStart(2, '0')}
                   </h3>
-                  <p className="text-sm sm:text-base font-bold text-slate-700 leading-snug">
+                  <p className="text-sm sm:text-base font-bold text-slate-700 leading-snug whitespace-pre-line">
                     {step}
                   </p>
                 </motion.div>
@@ -346,12 +374,12 @@ export default function Home() {
                 </div>
                 <p className="text-xs sm:text-sm font-black text-white mb-3 leading-snug">Pronto! Declare agora.</p>
                 <a
-                  href="https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda"
+                  href="https://servicos.receitafederal.gov.br/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer bg-brand-yellow text-slate-900 font-black px-4 py-2 rounded-full shadow-lg hover:bg-white transition-colors text-xs sm:text-sm flex items-center gap-1 hover:scale-105 active:scale-95"
                 >
-                  Ir para Gov.br <ArrowRight className="w-3 h-3" />
+                  Receita Federal <ArrowRight className="w-3 h-3" />
                 </a>
               </motion.div>
             </div>
@@ -599,12 +627,12 @@ export default function Home() {
               </div>
               <h3 className="text-3xl font-black mb-6">Pronto para transformar sua cidade?</h3>
               <a
-                href="https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda"
+                href="https://servicos.receitafederal.gov.br/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-brand-yellow text-slate-900 font-black text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(255,212,0,0.6)] hover:bg-white transition-colors gap-3 hover:scale-105 active:scale-95"
               >
-                Destinar Meu Imposto <ArrowRight className="w-6 h-6" />
+                Acessar Portal da Receita <ArrowRight className="w-6 h-6" />
               </a>
             </motion.div>
           </div>
@@ -642,8 +670,8 @@ export default function Home() {
                 <a href="#faq" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" /> Dúvidas frequentes
                 </a>
-                <a href="https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3" /> Declarar IR (Gov.br)
+                <a href="https://servicos.receitafederal.gov.br/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
+                  <ArrowRight className="w-3 h-3" /> Serviços da Receita Federal
                 </a>
                 <a href="https://www.tjro.jus.br/declareseuamor" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-brand-yellow transition-colors font-medium flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" /> Site Oficial TJRO

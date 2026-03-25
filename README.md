@@ -1,7 +1,5 @@
 # 💖 Declare Seu Amor — Porto Velho
 
-![Declare Seu Amor Banner](/public/images/carousel-1.png)
-
 > **"Com um simples gesto, você apoia projetos sociais em Porto Velho"**
 
 Uma Landing Page moderna e de alto impacto para a campanha **Declare Seu Amor**, que incentiva os contribuintes a destinarem parte do seu Imposto de Renda (IR) para os Fundos Municipais da Criança, do Adolescente e da Pessoa Idosa de Porto Velho/RO.
