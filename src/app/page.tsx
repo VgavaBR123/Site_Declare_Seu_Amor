@@ -69,7 +69,7 @@ export default function Home() {
     "Clique em 'Doações diretamente na declaração'.",
     "Selecione para qual fundo deseja destinar: “Criança e Adolescente” ou “Idoso”.",
     "Em seguida, procure por \"fundo municipal de Porto Velho\".",
-    "Digite o valor desejado (até 3% p/ cada fundo).",
+    "O sistema calcula automaticamente o limite que pode ser destinado.\nDigite o valor desejado dentro do limite (é possível doar até 3% p/ cada fundo).",
     "Para concluir, gere o DARF e efetue o pagamento.\n\n(Em caso de restituição, você receberá de volta. Se houver imposto a pagar, o valor pago será abatido)"
   ];
 
@@ -111,10 +111,10 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-0 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="relative w-28 h-24 sm:w-36 sm:h-32 md:w-48 md:h-40 lg:w-[250px] lg:h-[160px] -my-8 sm:-my-12 transition-transform drop-shadow-lg scale-100 sm:scale-110 lg:scale-125 origin-left">
+            <div className="relative w-28 h-24 sm:w-36 sm:h-32 md:w-48 md:h-40 lg:w-56 lg:h-36 -my-8 sm:-my-12 transition-transform drop-shadow-lg origin-left">
               <Image src={LOGO_SRC} alt="Logo Central" fill className="object-contain object-left" priority />
             </div>
-            <div className="relative w-12 h-10 sm:w-16 sm:h-12 md:w-20 md:h-16 lg:w-[100px] lg:h-[55px] -my-1 sm:-my-3 -ml-6 sm:-ml-10 md:-ml-12 lg:-ml-16 transition-transform drop-shadow-lg scale-100 sm:scale-110 lg:scale-110 origin-left">
+            <div className="relative w-12 h-10 sm:w-16 sm:h-12 md:w-20 md:h-16 lg:w-24 lg:h-14 -my-1 sm:-my-3 -ml-6 sm:-ml-10 md:-ml-12 lg:-ml-14 transition-transform drop-shadow-lg origin-left">
               <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain object-left" priority />
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function Home() {
             href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center bg-brand-yellow text-slate-900 font-extrabold px-5 py-3 sm:px-8 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,212,0,0.5)] hover:bg-yellow-300 transition-colors text-sm sm:text-base uppercase tracking-wider gap-2"
+            className="flex items-center justify-center bg-brand-yellow text-slate-900 font-extrabold px-3 py-2.5 sm:px-8 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,212,0,0.5)] hover:bg-yellow-300 transition-colors text-xs sm:text-base uppercase tracking-wider gap-1.5 sm:gap-2 whitespace-nowrap"
           >
             Baixe o Programa <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </motion.a>
@@ -217,7 +217,7 @@ export default function Home() {
         {/* Dynamic Carousel Section */}
         <section className="w-full relative pb-16">
           <div className="absolute top-1/2 left-0 right-0 h-full bg-white -z-10 rounded-t-[3rem] sm:rounded-t-[5rem]"></div>
-          <div className="max-w-xl mx-auto px-4 sm:px-6 relative group">
+          <div className="max-w-xl mx-auto px-6 sm:px-10 relative group">
             <motion.div 
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -258,14 +258,14 @@ export default function Home() {
             {/* Navigation Buttons */}
             <button 
               onClick={() => emblaApi?.scrollPrev()}
-              className="cursor-pointer absolute left-1 sm:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-brand-cyan text-white border-2 border-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,178,205,0.5)] hover:shadow-[0_15px_30px_rgba(255,212,0,0.6)] hover:bg-brand-yellow hover:text-slate-900 transition-all duration-300 hover:scale-110 active:scale-95 z-20"
+              className="cursor-pointer absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 bg-brand-cyan text-white border-2 border-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,178,205,0.5)] hover:shadow-[0_15px_30px_rgba(255,212,0,0.6)] hover:bg-brand-yellow hover:text-slate-900 transition-all duration-300 hover:scale-110 active:scale-95 z-20"
               aria-label="Anterior"
             >
               <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 ml-[-2px] transition-transform duration-300" />
             </button>
             <button 
               onClick={() => emblaApi?.scrollNext()}
-              className="cursor-pointer absolute right-1 sm:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-brand-cyan text-white border-2 border-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,178,205,0.5)] hover:shadow-[0_15px_30px_rgba(255,212,0,0.6)] hover:bg-brand-yellow hover:text-slate-900 transition-all duration-300 hover:scale-110 active:scale-95 z-20"
+              className="cursor-pointer absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 bg-brand-cyan text-white border-2 border-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,178,205,0.5)] hover:shadow-[0_15px_30px_rgba(255,212,0,0.6)] hover:bg-brand-yellow hover:text-slate-900 transition-all duration-300 hover:scale-110 active:scale-95 z-20"
               aria-label="Próximo"
             >
               <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 mr-[-2px] transition-transform duration-300" />
@@ -274,7 +274,7 @@ export default function Home() {
         </section>
 
         {/* Como Destinar (Passo a Passo) Section — 100vh */}
-        <section id="como-destinar" className="bg-white text-slate-900 min-h-screen lg:h-screen flex flex-col justify-center rounded-b-[2rem] sm:rounded-b-[3rem] md:rounded-b-[5rem] relative -mt-10 px-3 sm:px-6 lg:px-8 overflow-hidden mb-10 py-12 sm:py-16 lg:py-0">
+        <section id="como-destinar" className="bg-white text-slate-900 min-h-screen flex flex-col justify-center rounded-b-[2rem] sm:rounded-b-[3rem] md:rounded-b-[5rem] relative -mt-10 px-3 sm:px-6 lg:px-8 overflow-hidden mb-10 py-12 sm:py-16">
           <div className="max-w-7xl mx-auto w-full">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -420,7 +420,7 @@ export default function Home() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6 max-w-6xl mx-auto"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6 max-w-6xl mx-auto"
             >
               {cards.map((card, idx) => (
                 <motion.div 
@@ -504,9 +504,9 @@ export default function Home() {
         </section>
 
         {/* Quem Pode Participar */}
-        <section id="quem-pode" className="bg-slate-900 py-16 sm:py-24 md:py-32 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-cyan blur-[120px] opacity-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-yellow blur-[120px] opacity-10"></div>
+        <section id="quem-pode" className="bg-slate-900 py-16 sm:py-24 md:py-32 text-white relative overflow-x-clip overflow-y-visible">
+          <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-brand-cyan blur-[120px] opacity-10"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-brand-yellow blur-[120px] opacity-10"></div>
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
