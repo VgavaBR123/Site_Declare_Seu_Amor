@@ -43,6 +43,7 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [tutorialOpen, setTutorialOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,6 +122,7 @@ export default function Home() {
           <nav className="hidden lg:flex gap-6 font-bold text-white text-lg">
             <a href="#inicio" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Início</a>
             <a href="#como-destinar" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Como Destinar</a>
+            <a href="#tutorial" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Tutorial</a>
             <a href="#sobre" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Sobre</a>
             <a href="#quem-pode" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Quem Pode</a>
             <a href="#faq" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Dúvidas</a>
@@ -401,6 +403,116 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        {/* Tutorial Section */}
+        <section id="tutorial" className="bg-brand-cyan py-16 sm:py-24 md:py-32 text-white relative overflow-hidden">
+          {/* Decorative blurs */}
+          <div className="absolute top-0 left-0 w-72 h-72 bg-brand-yellow blur-[150px] opacity-20"></div>
+          <div className="absolute bottom-0 right-0 w-72 h-72 bg-white blur-[150px] opacity-10"></div>
+
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10 sm:mb-16"
+            >
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 sm:mb-6">
+                Veja o <span className="text-brand-yellow">Tutorial</span>
+              </h2>
+              <p className="text-base sm:text-xl text-white/80 font-medium max-w-2xl mx-auto">
+                Acompanhe o passo a passo completo de como destinar parte do seu Imposto de Renda.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 80, damping: 20 }}
+              className="flex justify-center"
+            >
+              {/* Phone mockup */}
+              <div className="relative mx-auto w-[280px] sm:w-[340px] md:w-[420px] cursor-pointer group/phone" onClick={() => setTutorialOpen(true)}>
+                {/* Glow behind phone */}
+                <div className="absolute inset-0 bg-brand-yellow/20 blur-[80px] scale-110 rounded-full"></div>
+                {/* Phone frame - silver/dark metallic */}
+                <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-b from-[#2c2c2e] via-[#1c1c1e] to-[#2c2c2e] p-[7px] sm:p-[8px] shadow-[0_30px_80px_rgba(0,0,0,0.5),0_0_0_2px_rgba(180,180,190,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] transition-transform duration-300 group-hover/phone:scale-[1.02]">
+                  {/* Metallic edge highlight */}
+                  <div className="absolute inset-0 rounded-[2.5rem] sm:rounded-[3rem] border border-[#555] pointer-events-none"></div>
+                  <div className="relative rounded-[2rem] sm:rounded-[2.3rem] overflow-hidden bg-black">
+                    {/* Notch / Dynamic Island */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 bg-black w-20 sm:w-28 h-5 sm:h-7 rounded-b-2xl flex items-center justify-center">
+                      <div className="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-[#1a1a1a] border border-[#333] shadow-inner"></div>
+                    </div>
+                    {/* Screen */}
+                    <div className="relative overflow-hidden" style={{ aspectRatio: '9/19.5' }}>
+                      <video
+                        src="/videos/VÍDEO - TUTORIAL DOAÇÃO IR.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-contain bg-black"
+                      />
+                      {/* Play overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-300">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl">
+                          <Play className="w-7 h-7 sm:w-8 sm:h-8 text-slate-900 ml-1" />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Bottom bar indicator */}
+                    <div className="absolute bottom-1.5 sm:bottom-2 left-1/2 -translate-x-1/2 z-20 w-24 sm:w-32 h-1 bg-white/30 rounded-full"></div>
+                  </div>
+                </div>
+                {/* Side button (power) */}
+                <div className="absolute top-32 sm:top-40 -right-[10px] w-[4px] h-14 sm:h-16 bg-black rounded-r-sm transition-transform duration-300 origin-left group-hover/phone:scale-x-150"></div>
+                {/* Volume buttons */}
+                <div className="absolute top-24 sm:top-28 -left-[10px] w-[4px] h-10 sm:h-12 bg-black rounded-l-sm transition-transform duration-300 origin-right group-hover/phone:scale-x-150"></div>
+                <div className="absolute top-40 sm:top-44 -left-[10px] w-[4px] h-10 sm:h-12 bg-black rounded-l-sm transition-transform duration-300 origin-right group-hover/phone:scale-x-150"></div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Tutorial Video Modal */}
+        <AnimatePresence>
+          {tutorialOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
+              onClick={() => setTutorialOpen(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 200, damping: 25 }}
+                className="relative w-full max-w-md max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close button */}
+                <button
+                  onClick={() => setTutorialOpen(false)}
+                  className="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors cursor-pointer flex items-center gap-2 text-sm font-bold"
+                >
+                  Fechar ✕
+                </button>
+                <video
+                  src="/videos/VÍDEO - TUTORIAL DOAÇÃO IR.mp4"
+                  autoPlay
+                  controls
+                  playsInline
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Impact e Cards */}
         <section id="impacto" className="bg-brand-yellow py-12 sm:py-16 md:py-20 text-slate-900 relative">
