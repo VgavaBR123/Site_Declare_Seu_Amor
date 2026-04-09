@@ -108,7 +108,7 @@ export default function Home() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-cyan/95 backdrop-blur-xl shadow-xl py-3' : 'bg-transparent py-5 sm:py-6'}`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-cyan/95 backdrop-blur-xl shadow-xl py-3' : 'bg-transparent py-5 sm:py-6'} ${tutorialOpen ? 'hidden' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-0 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -492,22 +492,24 @@ export default function Home() {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                className="relative w-full max-w-md max-h-[90vh]"
+                className="relative w-auto flex flex-col items-center max-w-[95vw] md:max-w-[500px]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close button */}
-                <button
-                  onClick={() => setTutorialOpen(false)}
-                  className="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors cursor-pointer flex items-center gap-2 text-sm font-bold"
-                >
-                  Fechar ✕
-                </button>
+                <div className="w-full flex justify-end mb-3">
+                  <button
+                    onClick={() => setTutorialOpen(false)}
+                    className="text-white hover:text-white transition-colors cursor-pointer flex items-center gap-2 text-sm font-bold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md"
+                  >
+                    Fechar ✕
+                  </button>
+                </div>
                 <video
                   src="/videos/VÍDEO - TUTORIAL DOAÇÃO IR.mp4"
                   autoPlay
                   controls
                   playsInline
-                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  className="w-auto h-auto max-w-full max-h-[70vh] md:max-h-[80vh] rounded-[2rem] shadow-2xl border border-white/10"
                 />
               </motion.div>
             </motion.div>
