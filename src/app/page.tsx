@@ -761,15 +761,15 @@ export default function Home() {
             
             {/* Column 1 — Logo & Description */}
             <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-center gap-2 sm:gap-4 mb-6">
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48 drop-shadow-2xl">
-                  <Image src={LOGO_SRC} alt="Logo Declare Seu Amor" fill className="object-contain" />
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 mb-6">
+                <div className="relative w-40 h-32 sm:w-48 sm:h-40 shrink-0 drop-shadow-2xl">
+                  <Image src={LOGO_SRC} alt="Logo Declare Seu Amor" fill className="object-contain object-center md:object-left" />
                 </div>
-                <div className="relative w-28 h-20 sm:w-32 sm:h-24 drop-shadow-2xl">
-                  <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain" />
+                <div className="relative w-16 h-12 sm:w-20 sm:h-16 shrink-0 drop-shadow-2xl">
+                  <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain object-center md:object-left" />
                 </div>
               </div>
-              <p className="text-sm text-white/50 font-medium leading-relaxed text-center md:text-left max-w-xs">
+              <p className="text-sm text-white/50 font-medium leading-relaxed text-center md:text-left max-w-xs mt-2">
                 Campanha Municipal de incentivo à destinação do Imposto de Renda para crianças, adolescentes e idosos de Porto Velho.
               </p>
             </div>
