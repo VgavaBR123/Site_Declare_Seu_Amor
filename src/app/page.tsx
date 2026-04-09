@@ -114,7 +114,7 @@ export default function Home() {
       }}></div>
 
       {/* Navbar */}
-      <motion.header 
+      <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -154,7 +154,7 @@ export default function Home() {
       <main className="flex-grow pt-24 sm:pt-32 md:pt-40 relative z-10">
         {/* Hero Section */}
         <section id="inicio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="show"
@@ -168,26 +168,26 @@ export default function Home() {
               Com um simples gesto, você apoia projeto sociais em Porto Velho
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 sm:mb-8 leading-[1.1] drop-shadow-2xl">
-              Seu Imposto <br className="hidden sm:block"/>
+              Seu Imposto <br className="hidden sm:block" />
               <span className="text-brand-yellow relative inline-block">
                 Ajuda Quem Mais Precisa
-                <svg className="absolute w-full h-3 sm:h-6 -bottom-1 sm:-bottom-3 left-0 text-white/20" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="transparent" strokeLinecap="round"/></svg>
+                <svg className="absolute w-full h-3 sm:h-6 -bottom-1 sm:-bottom-3 left-0 text-white/20" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="transparent" strokeLinecap="round" /></svg>
               </span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-base sm:text-xl md:text-3xl text-white/90 font-medium mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-md px-2">
               Parte do seu Imposto de Renda pode financiar projetos que atendem crianças, adolescentes e idosos de Porto Velho
             </motion.p>
-            
+
             {/* Novas Info Cards Hero */}
-            <motion.div 
+            <motion.div
               variants={staggerContainer}
               initial="hidden"
               animate="show"
               className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-6 sm:mt-10"
             >
-              <motion.div 
-                variants={fadeInUp} 
-                whileHover={{ y: -6, scale: 1.02 }} 
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-[2rem] p-8 border border-white/20 shadow-2xl text-center flex items-center justify-center overflow-hidden group cursor-pointer"
               >
@@ -198,9 +198,9 @@ export default function Home() {
                 </h3>
               </motion.div>
 
-              <motion.div 
-                variants={fadeInUp} 
-                whileHover={{ y: -6, scale: 1.02 }} 
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-[2rem] p-8 border border-white/20 shadow-2xl text-center flex items-center justify-center overflow-hidden group cursor-pointer"
               >
@@ -211,9 +211,9 @@ export default function Home() {
                 </h3>
               </motion.div>
 
-              <motion.div 
-                variants={fadeInUp} 
-                whileHover={{ y: -6, scale: 1.02 }} 
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-[2rem] p-8 border border-white/20 shadow-2xl text-center flex items-center justify-center overflow-hidden group cursor-pointer"
               >
@@ -231,13 +231,13 @@ export default function Home() {
         <section className="w-full relative pb-16">
           <div className="absolute top-1/2 left-0 right-0 h-full bg-white -z-10 rounded-t-[3rem] sm:rounded-t-[5rem]"></div>
           <div className="max-w-xl mx-auto px-6 sm:px-10 relative group">
-            <motion.div 
-               initial={{ opacity: 0, y: 50 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ type: "spring", stiffness: 70, damping: 20 }}
-               className="embla overflow-hidden rounded-2xl md:rounded-[3rem] shadow-2xl border border-slate-200/50 bg-white relative"
-               ref={emblaRef}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 70, damping: 20 }}
+              className="embla overflow-hidden rounded-2xl md:rounded-[3rem] shadow-2xl border border-slate-200/50 bg-white relative"
+              ref={emblaRef}
             >
               <div className="embla__container flex touch-pan-y cursor-grab active:cursor-grabbing">
                 {CAROUSEL_ITEMS.map((item, index) => (
@@ -267,16 +267,16 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Navigation Buttons */}
-            <button 
+            <button
               onClick={() => emblaApi?.scrollPrev()}
               className="cursor-pointer absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 bg-brand-cyan text-white border-2 border-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,178,205,0.5)] hover:shadow-[0_15px_30px_rgba(255,212,0,0.6)] hover:bg-brand-yellow hover:text-slate-900 transition-all duration-300 hover:scale-110 active:scale-95 z-20"
               aria-label="Anterior"
             >
               <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 ml-[-2px] transition-transform duration-300" />
             </button>
-            <button 
+            <button
               onClick={() => emblaApi?.scrollNext()}
               className="cursor-pointer absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-14 sm:h-14 bg-brand-cyan text-white border-2 border-white rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(0,178,205,0.5)] hover:shadow-[0_15px_30px_rgba(255,212,0,0.6)] hover:bg-brand-yellow hover:text-slate-900 transition-all duration-300 hover:scale-110 active:scale-95 z-20"
               aria-label="Próximo"
@@ -289,7 +289,7 @@ export default function Home() {
         {/* Como Destinar (Passo a Passo) Section — 100vh */}
         <section id="como-destinar" className="bg-white text-slate-900 min-h-screen flex flex-col justify-center rounded-b-[2rem] sm:rounded-b-[3rem] md:rounded-b-[5rem] relative -mt-10 px-3 sm:px-6 lg:px-8 overflow-hidden mb-10 py-12 sm:py-16">
           <div className="max-w-7xl mx-auto w-full">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -300,7 +300,7 @@ export default function Home() {
             </motion.div>
 
             {/* Alerta Importante */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -309,11 +309,11 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 blur-3xl -z-10 group-hover:bg-brand-yellow/20 transition-all duration-700"></div>
               <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center shadow-[0_5px_15px_rgba(255,212,0,0.4)]">
                 <motion.div
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 5, -5, 0]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut"
@@ -530,7 +530,7 @@ export default function Home() {
         {/* Impact e Cards */}
         <section id="impacto" className="bg-brand-yellow py-12 sm:py-16 md:py-20 text-slate-900 relative">
           <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -540,7 +540,7 @@ export default function Home() {
               <p className="text-lg sm:text-2xl font-bold text-slate-800">Seu imposto deixa de ser número e vira cuidado direto e carinho.</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="show"
@@ -548,7 +548,7 @@ export default function Home() {
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6 max-w-6xl mx-auto"
             >
               {cards.map((card, idx) => (
-                <motion.div 
+                <motion.div
                   variants={scaleIn}
                   key={idx}
                   whileHover={{ y: -10 }}
@@ -560,7 +560,7 @@ export default function Home() {
               ))}
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -700,7 +700,7 @@ export default function Home() {
                 Saiba <span className="text-brand-cyan">Mais</span>
               </h2>
               <p className="text-base sm:text-xl text-slate-500 font-medium max-w-2xl mx-auto">
-                Fique por dentro de matérias e iniciativas sobre a campanha e a destinação de imposto de renda em Porto Velho.
+                Fique por dentro de notícias sobre a campanha e a destinação de imposto de renda em Porto Velho.
               </p>
             </motion.div>
 
@@ -740,7 +740,7 @@ export default function Home() {
         {/* FAQ */}
         <section id="faq" className="bg-brand-cyan py-16 sm:py-24 md:py-32 text-white relative">
           <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -751,8 +751,8 @@ export default function Home() {
                 Tudo o que você precisa saber para destinar seu imposto com segurança.
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="show"
@@ -760,9 +760,9 @@ export default function Home() {
               className="space-y-4"
             >
               {faqs.map((faq, idx) => (
-                <motion.div 
+                <motion.div
                   variants={fadeInUp}
-                  key={idx} 
+                  key={idx}
                   className="bg-white/10 backdrop-blur-lg rounded-[2rem] border border-white/20 overflow-hidden"
                 >
                   <button
@@ -774,24 +774,24 @@ export default function Home() {
                   </button>
                   <AnimatePresence>
                     {openFaq === idx && (
-                       <motion.div
-                         initial={{ height: 0, opacity: 0 }}
-                         animate={{ height: "auto", opacity: 1 }}
-                         exit={{ height: 0, opacity: 0 }}
-                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                         className="overflow-hidden"
-                       >
-                         <div className="px-4 pb-6 sm:px-8 sm:pb-8 text-sm sm:text-lg md:text-xl font-medium text-white/90 leading-relaxed border-t border-white/10 pt-4">
-                           {faq.a}
-                         </div>
-                       </motion.div>
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-4 pb-6 sm:px-8 sm:pb-8 text-sm sm:text-lg md:text-xl font-medium text-white/90 leading-relaxed border-t border-white/10 pt-4">
+                          {faq.a}
+                        </div>
+                      </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
               ))}
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -819,7 +819,7 @@ export default function Home() {
         {/* Main footer content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            
+
             {/* Column 1 — Logo & Description */}
             <div className="flex flex-col items-center md:items-start">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 mb-6">
