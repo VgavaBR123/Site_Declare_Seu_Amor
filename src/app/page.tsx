@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { ChevronDown, CheckCircle2, Video, Info, FileText, ArrowRight, HandHeart, Play, ChevronLeft, ChevronRight, Heart, Calculator } from 'lucide-react';
+import { ChevronDown, CheckCircle2, Video, Info, FileText, ArrowRight, HandHeart, Play, ChevronLeft, ChevronRight, Heart, Calculator, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 const CAROUSEL_ITEMS = [
@@ -93,6 +93,16 @@ export default function Home() {
     { q: "Até quando posso destinar?", a: "Durante o período de entrega da declaração do Imposto de Renda. Após esse prazo, a destinação não pode ser feita na declaração." }
   ];
 
+  const newsLinks = [
+    { title: "Declare Seu Amor: Destinação de parte do IRPF vai apoiar ações sociais em Porto Velho", url: "https://www.portovelho.ro.gov.br/artigo/55030/declare-seu-amor-destinacao-de-parte-do-irpf-vai-apoiar-acoes-sociais-em-porto-velho" },
+    { title: "Ação Declare Seu Amor 2026: Incentiva destinação de imposto de renda para Porto Velho", url: "https://www.portovelho.ro.gov.br/artigo/54707/acao-declare-seu-amor-2026-incentiva-destinacao-de-imposto-de-renda-para-porto-velho" },
+    { title: "Solidariedade: Destine parte do seu imposto de renda a quem precisa", url: "https://semec.portovelho.ro.gov.br/artigo/55280/solidariedade-destine-parte-do-seu-imposto-de-renda-a-quem-precisa" },
+    { title: "Apoio: Prefeitura reforça prazo do imposto de renda e mobiliza contribuintes para destinação a projetos sociais", url: "https://www.portovelho.ro.gov.br/artigo/55422/apoio-prefeitura-reforca-prazo-do-imposto-de-renda-e-mobiliza-contribuintes-para-destinacao-a-projetos-sociais" },
+    { title: "Participe: Transforme seu imposto de renda em apoio para Porto Velho", url: "https://www.portovelho.ro.gov.br/artigo/55446/participe-transforme-seu-imposto-de-renda-em-apoio-para-porto-velho" },
+    { title: "Inclusão: Destino do imposto de renda fortalece projetos sociais em Porto Velho", url: "https://www.portovelho.ro.gov.br/artigo/55457/inclusao-destino-do-imposto-de-renda-fortalece-projetos-sociais-em-porto-velho" },
+    { title: "Participe: Declare Seu Amor transforma imposto em oportunidades para crianças, adolescentes e idosos", url: "https://www.portovelho.ro.gov.br/artigo/55482/participe-declare-seu-amor-transforma-imposto-em-oportunidades-para-criancas-adolescentes-e-idosos" }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-brand-cyan text-white font-sans overflow-x-hidden">
       {/* Decorative background vectors */}
@@ -125,6 +135,7 @@ export default function Home() {
             <a href="#tutorial" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Tutorial</a>
             <a href="#sobre" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Sobre</a>
             <a href="#quem-pode" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Quem Pode</a>
+            <a href="#saiba-mais" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Saiba Mais</a>
             <a href="#faq" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Dúvidas</a>
           </nav>
           <motion.a
@@ -395,7 +406,7 @@ export default function Home() {
               className="flex items-center justify-center gap-3 bg-brand-cyan/5 border border-brand-cyan/10 rounded-2xl px-6 py-3"
             >
               <div className="relative w-8 h-8 flex-shrink-0">
-                <Image src={LOGO_SRC} alt="Logo" fill className="object-contain" />
+                <Image src={LOGO_SRC} alt="Logo" fill className="object-contain" priority />
               </div>
               <p className="text-xs sm:text-sm font-bold text-slate-600">
                 Você não paga nada a mais — apenas escolhe para onde vai uma parte do seu imposto. <span className="text-brand-cyan">Simples assim.</span>
@@ -676,6 +687,56 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Saiba Mais */}
+        <section id="saiba-mais" className="bg-slate-50 py-16 sm:py-24 md:py-32 text-slate-900 relative">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10 sm:mb-16"
+            >
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 sm:mb-6">
+                Saiba <span className="text-brand-cyan">Mais</span>
+              </h2>
+              <p className="text-base sm:text-xl text-slate-500 font-medium max-w-2xl mx-auto">
+                Fique por dentro de matérias e iniciativas sobre a campanha e a destinação de imposto de renda em Porto Velho.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+            >
+              {newsLinks.map((news, idx) => (
+                <motion.a
+                  key={idx}
+                  href={news.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variants={fadeInUp}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  className="group relative bg-white rounded-[1.5rem] p-6 border border-slate-200 shadow-md hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer overflow-hidden"
+                >
+                  <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-brand-yellow to-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div>
+                    <FileText className="w-8 h-8 text-brand-cyan mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight mb-4 group-hover:text-brand-cyan transition-colors">
+                      {news.title}
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-bold text-brand-yellow mt-6">
+                    Ler matéria completa <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section id="faq" className="bg-brand-cyan py-16 sm:py-24 md:py-32 text-white relative">
           <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
@@ -763,10 +824,10 @@ export default function Home() {
             <div className="flex flex-col items-center md:items-start">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 mb-6">
                 <div className="relative w-40 h-32 sm:w-48 sm:h-40 shrink-0 drop-shadow-2xl">
-                  <Image src={LOGO_SRC} alt="Logo Declare Seu Amor" fill className="object-contain object-center md:object-left" />
+                  <Image src={LOGO_SRC} alt="Logo Declare Seu Amor" fill className="object-contain object-center md:object-left" priority />
                 </div>
                 <div className="relative w-16 h-12 sm:w-20 sm:h-16 shrink-0 drop-shadow-2xl">
-                  <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain object-center md:object-left" />
+                  <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain object-center md:object-left" priority />
                 </div>
               </div>
               <p className="text-sm text-white/50 font-medium leading-relaxed text-center md:text-left max-w-xs mt-2">
