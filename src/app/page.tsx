@@ -129,14 +129,15 @@ export default function Home() {
               <Image src="/images/image.svg" alt="Logo Prefeitura/TJRO" fill className="object-contain object-left" priority />
             </div>
           </div>
-          <nav className="hidden lg:flex gap-6 font-bold text-white text-lg">
-            <a href="#inicio" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Início</a>
-            <a href="#como-destinar" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Como Destinar</a>
-            <a href="#tutorial" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Tutorial</a>
-            <a href="#sobre" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Sobre</a>
-            <a href="#quem-pode" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Quem Pode</a>
-            <a href="#saiba-mais" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Saiba Mais</a>
-            <a href="#faq" className="hover:text-brand-yellow transition-colors drop-shadow-sm">Dúvidas</a>
+          <nav className="hidden lg:flex flex-1 justify-center gap-2 lg:gap-3 xl:gap-5 2xl:gap-6 font-bold text-white text-[10px] lg:text-xs xl:text-sm 2xl:text-lg mx-2 xl:mx-4">
+            <a href="#inicio" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Início</a>
+            <a href="#como-destinar" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Como Destinar</a>
+            <a href="#tutorial" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Tutorial</a>
+            <a href="#sobre" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Sobre</a>
+            <a href="#quem-pode" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Quem Pode</a>
+            <a href="#contador-amigo" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Contador Amigo</a>
+            <a href="#saiba-mais" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Saiba Mais</a>
+            <a href="#faq" className="hover:text-brand-yellow transition-colors drop-shadow-sm whitespace-nowrap">Dúvidas</a>
           </nav>
           <motion.a
             whileHover={{ scale: 1.05 }}
@@ -144,9 +145,9 @@ export default function Home() {
             href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center bg-brand-yellow text-slate-900 font-extrabold px-3 py-2.5 sm:px-8 sm:py-4 rounded-full shadow-[0_0_30px_rgba(255,212,0,0.5)] hover:bg-yellow-300 transition-colors text-xs sm:text-base uppercase tracking-wider gap-1.5 sm:gap-2 whitespace-nowrap"
+            className="flex items-center justify-center bg-brand-yellow text-slate-900 font-extrabold px-3 py-2.5 lg:px-4 lg:py-3 xl:px-8 xl:py-4 rounded-full shadow-[0_0_30px_rgba(255,212,0,0.5)] hover:bg-yellow-300 transition-colors text-[10px] sm:text-xs xl:text-base uppercase tracking-wider gap-1.5 sm:gap-2 whitespace-nowrap shrink-0"
           >
-            Baixe o Programa <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            Baixe o Programa <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 xl:w-5 xl:h-5" />
           </motion.a>
         </div>
       </motion.header>
@@ -568,22 +569,27 @@ export default function Home() {
             >
               <div className="absolute left-0 bottom-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-brand-cyan/40 via-transparent to-transparent"></div>
               <h3 className="text-2xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-10 relative z-10">
-                Apoio real a causas <span className="text-brand-yellow">urgentes.</span>
+                Conheça os projetos <span className="text-brand-yellow">sociais</span>
               </h3>
-              <p className="text-sm sm:text-lg text-white/70 font-medium mb-6 sm:mb-10 relative z-10 max-w-3xl mx-auto">
-                Os recursos que você destinar são encaminhados aos Fundos Municipais e aplicados em projetos que atendem quem mais precisa.
+              <p className="text-sm sm:text-lg text-white/70 font-medium mb-6 sm:mb-10 relative z-10 max-w-4xl mx-auto leading-relaxed">
+                Os recursos destinados ao longo da campanha são administrados pelos Conselhos Municipais da Criança e do Adolescente e da Pessoa Idosa. Esses valores são aplicados em projetos sociais, são eles:
               </p>
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-5 relative z-10">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 relative z-10">
                 {[
-                  "Apoio a crianças em risco",
-                  "Combate ao trabalho infantil",
-                  "Vítimas de violência",
-                  "Apoio a famílias vulneráveis",
-                  "Incentivo à adoção",
-                  "Capacitação de jovens",
-                  "Atendimento à pessoa idosa"
+                  "AMA",
+                  "Observatório Socioambiental",
+                  "Cáritas",
+                  "Shotokan",
+                  "APAE",
+                  "FEASE – Vida Capoeira",
+                  "FEASE – Voo da Liberdade",
+                  "NACC",
+                  "Cesmazza",
+                  "São Tiago",
+                  "Casa Rosetta",
+                  "Hospital do Amor – 2º Pio XII"
                 ].map((item, idx) => (
-                  <span key={idx} className="bg-white/10 backdrop-blur-md text-white font-bold px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-lg md:text-xl border border-white/20">
+                  <span key={idx} className="bg-white/10 backdrop-blur-md text-white font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-sm sm:text-base border border-white/20 hover:bg-white/20 transition-colors cursor-default">
                     {item}
                   </span>
                 ))}
@@ -683,6 +689,140 @@ export default function Home() {
               <p className="text-sm sm:text-lg font-bold text-brand-yellow">
                 ⚠️ A opção simplificada não permite destinação. É necessário usar o modelo completo.
               </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contador Amigo */}
+        <section id="contador-amigo" className="bg-white py-16 sm:py-24 md:py-32 text-slate-900 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10 sm:mb-16"
+            >
+              <div className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-brand-cyan/10 text-brand-cyan font-bold uppercase tracking-widest text-sm mb-6 border border-brand-cyan/20">
+                Aba: Contador Amigo
+              </div>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 sm:mb-6">
+                EI, <span className="text-brand-cyan">CONTADOR!</span><br />
+                AJUDE A TRANSFORMAR IMPOSTO EM IMPACTO SOCIAL EM PORTO VELHO
+              </h2>
+              <p className="text-base sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto">
+                Oriente seus clientes sobre a destinação do Imposto de Renda para os Fundos Municipais da Criança, Adolescente e Pessoa Idosa.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-7"
+              >
+                <div className="bg-slate-50 rounded-[2rem] p-8 sm:p-10 border border-slate-200 shadow-lg">
+                  <p className="text-lg sm:text-xl text-slate-700 font-medium leading-relaxed mb-6">
+                    Além de auxiliar no envio correto da declaração, você também pode incentivar contribuintes a destinarem parte do Imposto de Renda para projetos sociais que atendem crianças, adolescentes e idosos em Porto Velho.
+                  </p>
+                  <p className="text-lg sm:text-xl text-slate-700 font-bold leading-relaxed">
+                    A destinação é <span className="text-brand-cyan">simples, segura</span> e feita dentro do sistema da Receita Federal.
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-5 flex justify-center gap-4 relative"
+              >
+                 <Image src="/images/contador/STORY PARA CONTADORES 1 .png" alt="Card 1 Contador" width={260} height={462} className="rounded-2xl shadow-xl rotate-[-4deg] relative z-10 w-40 sm:w-52 md:w-60 h-auto" />
+                 <Image src="/images/contador/STORY PARA CONTADORES 2.png" alt="Card 2 Contador" width={260} height={462} className="rounded-2xl shadow-xl rotate-[4deg] mt-12 relative z-20 w-40 sm:w-52 md:w-60 h-auto -ml-10 sm:-ml-16" />
+              </motion.div>
+            </div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
+            >
+              {/* Card 1 */}
+              <motion.div variants={fadeInUp} whileHover={{ y: -5 }} className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-2 h-full bg-brand-cyan"></div>
+                <Calculator className="w-10 h-10 text-brand-cyan mb-4" />
+                <h3 className="text-2xl font-black text-slate-900 mb-4">Inclua a destinação no atendimento</h3>
+                <p className="text-slate-600 font-medium mb-4">Apresente a destinação como etapa final da declaração. Explique ao cliente que:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> não existe custo adicional</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> o valor já faz parte do imposto devido</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> a destinação pode aumentar a restituição ou reduzir o imposto a pagar</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> o recurso permanece em Porto Velho</li>
+                </ul>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div variants={fadeInUp} whileHover={{ y: -5 }} className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-2 h-full bg-brand-yellow"></div>
+                <HandHeart className="w-10 h-10 text-brand-yellow mb-4" />
+                <h3 className="text-2xl font-black text-slate-900 mb-4">Passo rápido no sistema</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-slate-700 font-medium"><span className="bg-brand-yellow text-slate-900 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">1</span> Finalize a declaração normalmente</li>
+                  <li className="flex items-start gap-3 text-slate-700 font-medium"><span className="bg-brand-yellow text-slate-900 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">2</span> Acesse “Doações Diretamente na Declaração”</li>
+                  <li className="flex items-start gap-3 text-slate-700 font-medium"><span className="bg-brand-yellow text-slate-900 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">3</span> Escolha: Fundo da Criança e Adolescente ou Fundo da Pessoa Idosa</li>
+                  <li className="flex items-start gap-3 text-slate-700 font-medium"><span className="bg-brand-yellow text-slate-900 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">4</span> Selecione o Fundo Municipal de Porto Velho</li>
+                  <li className="flex items-start gap-3 text-slate-700 font-medium"><span className="bg-brand-yellow text-slate-900 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">5</span> Informe o valor dentro do limite disponível</li>
+                  <li className="flex items-start gap-3 text-slate-700 font-medium"><span className="bg-brand-yellow text-slate-900 font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">6</span> Gere o DARF e oriente sobre o pagamento dentro do prazo</li>
+                </ul>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div variants={fadeInUp} whileHover={{ y: -5 }} className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-2 h-full bg-brand-cyan"></div>
+                <Heart className="w-10 h-10 text-brand-cyan mb-4" />
+                <h3 className="text-2xl font-black text-slate-900 mb-4">Seu atendimento também gera impacto</h3>
+                <p className="text-slate-600 font-medium mb-4">Ao orientar seus clientes, você ajuda a fortalecer projetos que atuam com:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> proteção de crianças e adolescentes</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> acolhimento de idosos</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> combate à vulnerabilidade social</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> apoio a famílias</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> garantia de direitos</li>
+                </ul>
+              </motion.div>
+
+              {/* Card 4 */}
+              <motion.div variants={fadeInUp} whileHover={{ y: -5 }} className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-2 h-full bg-brand-yellow"></div>
+                <FileText className="w-10 h-10 text-brand-yellow mb-4" />
+                <h3 className="text-2xl font-black text-slate-900 mb-4">Segurança e legalidade</h3>
+                <p className="text-slate-600 font-medium mb-4">A destinação:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> é prevista em lei</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> ocorre dentro do sistema oficial da Receita Federal</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> possui acompanhamento dos Conselhos Municipais</li>
+                  <li className="flex items-start gap-2 text-slate-700 font-medium"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> financia projetos sociais fiscalizados</li>
+                </ul>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-slate-900 rounded-[2rem] sm:rounded-[3rem] p-10 sm:p-16 text-center relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-brand-cyan/20 to-brand-yellow/20 opacity-50"></div>
+              <h3 className="text-2xl sm:text-4xl font-black text-white mb-8 relative z-10">
+                VOCÊ FAZ A DECLARAÇÃO E SEU CLIENTE AJUDA A <span className="text-brand-yellow">TRANSFORMAR VIDAS.</span>
+              </h3>
+              <a
+                href="#como-destinar"
+                className="cursor-pointer inline-flex items-center justify-center bg-brand-yellow text-slate-900 font-black px-8 py-4 rounded-full shadow-lg hover:bg-white transition-colors text-sm sm:text-base uppercase tracking-wider gap-2 relative z-10 hover:scale-105 active:scale-95"
+              >
+                QUERO APOIAR A CAMPANHA <ArrowRight className="w-5 h-5" />
+              </a>
             </motion.div>
           </div>
         </section>
