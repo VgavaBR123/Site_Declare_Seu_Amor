@@ -634,7 +634,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Quem Pode Participar */}
+        {/* Quem Pode Destinar — Servidores e lei de folga compensatória */}
         <section id="quem-pode" className="bg-slate-900 py-16 sm:py-24 md:py-32 text-white relative overflow-x-clip overflow-y-visible">
           <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-brand-cyan blur-[120px] opacity-10"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-brand-yellow blur-[120px] opacity-10"></div>
@@ -643,52 +643,32 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-10 sm:mb-16"
+              className="text-center mb-10 sm:mb-12"
             >
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 sm:mb-6">Quem pode <span className="text-brand-yellow">destinar?</span></h2>
-              <p className="text-base sm:text-xl text-white/70 font-medium">
-                Contribuintes que fazem a declaração do Imposto de Renda no modelo completo.
-              </p>
             </motion.div>
 
             <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12"
-            >
-              <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white/10 text-center overflow-hidden group cursor-default transition-all hover:shadow-2xl hover:shadow-brand-cyan/10">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-cyan/50"></div>
-                <h3 className="text-xl sm:text-2xl font-black text-white mb-3">Pessoa Física</h3>
-                <p className="text-sm sm:text-base text-white/50 font-medium leading-relaxed">Pode destinar até 6% do imposto devido.</p>
-                <div className="mt-5 inline-block bg-brand-cyan/15 text-brand-cyan text-xs sm:text-sm font-black px-4 py-1.5 rounded-full">Até 6%</div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white/10 text-center overflow-hidden group cursor-default transition-all hover:shadow-2xl hover:shadow-brand-yellow/10">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-yellow to-brand-yellow/50"></div>
-                <h3 className="text-xl sm:text-2xl font-black text-white mb-3">Pessoa Jurídica</h3>
-                <p className="text-sm sm:text-base text-white/50 font-medium leading-relaxed">Também podem participar, conforme legislação vigente.</p>
-                <div className="mt-5 inline-block bg-brand-yellow/15 text-brand-yellow text-xs sm:text-sm font-black px-4 py-1.5 rounded-full">Conforme lei</div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white/10 text-center overflow-hidden group cursor-default transition-all hover:shadow-2xl hover:shadow-white/5">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white/40 to-white/10"></div>
-                <h3 className="text-xl sm:text-2xl font-black text-white mb-3">Contadores</h3>
-                <p className="text-sm sm:text-base text-white/50 font-medium leading-relaxed">Podem orientar clientes durante a declaração.</p>
-                <div className="mt-5 inline-block bg-white/10 text-white/70 text-xs sm:text-sm font-black px-4 py-1.5 rounded-full">Orientação</div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-brand-yellow/10 border border-brand-yellow/20 rounded-2xl px-6 py-4 sm:px-8 sm:py-5 text-center"
+              className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-12 border border-white/10 text-center overflow-hidden shadow-2xl shadow-brand-cyan/5"
             >
-              <p className="text-sm sm:text-lg font-bold text-brand-yellow">
-                ⚠️ A opção simplificada não permite destinação. É necessário usar o modelo completo.
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-yellow"></div>
+              <h3 className="text-2xl sm:text-3xl font-black text-brand-yellow mb-6">Servidores Municipais</h3>
+              <p className="text-base sm:text-lg text-white/80 font-medium leading-relaxed max-w-3xl mx-auto mb-8">
+                Terão direito a 2 dias de folga compensatória mediante comprovação da destinação e solicitação formal junto ao setor de Gestão de Pessoa da pasta municipal onde trabalham.
               </p>
+              <a
+                href="/documentos/lei-complementar-n-1058-folga-doacao-ir.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-yellow text-slate-900 font-black text-sm sm:text-base px-8 py-4 hover:bg-brand-yellow/90 transition-colors shadow-lg shadow-brand-yellow/20"
+              >
+                <FileText className="w-5 h-5 shrink-0" aria-hidden />
+                Acesse a lei completa
+                <ExternalLink className="w-4 h-4 shrink-0 opacity-80" aria-hidden />
+              </a>
             </motion.div>
           </div>
         </section>
