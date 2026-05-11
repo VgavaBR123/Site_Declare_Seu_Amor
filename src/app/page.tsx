@@ -638,7 +638,7 @@ export default function Home() {
         <section id="quem-pode" className="bg-slate-900 py-16 sm:py-24 md:py-32 text-white relative overflow-x-clip overflow-y-visible">
           <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-brand-cyan blur-[120px] opacity-10"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-brand-yellow blur-[120px] opacity-10"></div>
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -648,28 +648,65 @@ export default function Home() {
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 sm:mb-6">Quem pode <span className="text-brand-yellow">destinar?</span></h2>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-12 border border-white/10 text-center overflow-hidden shadow-2xl shadow-brand-cyan/5"
-            >
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-yellow"></div>
-              <h3 className="text-2xl sm:text-3xl font-black text-brand-yellow mb-6">Servidores Municipais</h3>
-              <p className="text-base sm:text-lg text-white/80 font-medium leading-relaxed max-w-3xl mx-auto mb-8">
-                Terão direito a 2 dias de folga compensatória mediante comprovação da destinação e solicitação formal junto ao setor de Gestão de Pessoa da pasta municipal onde trabalham.
-              </p>
-              <a
-                href="/documentos/lei-complementar-n-1058-folga-doacao-ir.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-yellow text-slate-900 font-black text-sm sm:text-base px-8 py-4 hover:bg-brand-yellow/90 transition-colors shadow-lg shadow-brand-yellow/20"
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* Pessoa Física */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white/10 text-center overflow-hidden shadow-2xl shadow-brand-cyan/5 flex flex-col"
               >
-                <FileText className="w-5 h-5 shrink-0" aria-hidden />
-                Acesse a lei completa
-                <ExternalLink className="w-4 h-4 shrink-0 opacity-80" aria-hidden />
-              </a>
-            </motion.div>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-yellow"></div>
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-cyan mb-6">Pessoa Física</h3>
+                <p className="text-base sm:text-lg text-white/80 font-medium leading-relaxed flex-grow">
+                  Quem tem imposto a pagar ou direito à restituição e utiliza o modelo de declaração completa.
+                </p>
+              </motion.div>
+
+              {/* Empresas (Pessoa Jurídica) */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white/10 text-center overflow-hidden shadow-2xl shadow-brand-cyan/5 flex flex-col"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-yellow"></div>
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-yellow mb-2">Empresas</h3>
+                <span className="block text-sm sm:text-base font-bold text-brand-yellow/80 mb-6 uppercase tracking-wider">(Pessoa Jurídica)</span>
+                <p className="text-base sm:text-lg text-white/80 font-medium leading-relaxed flex-grow">
+                  Empresas tributadas com base no lucro real podem destinar, conforme a legislação vigente.<br/><br/>
+                  Transforme seu imposto em investimento social e fortaleça a atuação da sua empresa onde ela está inserida!
+                </p>
+              </motion.div>
+
+              {/* Servidores Municipais */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-[2rem] p-8 sm:p-10 border border-white/10 text-center overflow-hidden shadow-2xl shadow-brand-cyan/5 flex flex-col"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-yellow"></div>
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-cyan mb-6">Servidores Municipais</h3>
+                <p className="text-base sm:text-lg text-white/80 font-medium leading-relaxed mb-8 flex-grow">
+                  Terão direito a 2 dias de folga compensatória mediante comprovação da destinação e solicitação formal junto ao setor de Gestão de Pessoa da pasta municipal onde trabalham.
+                </p>
+                <div className="mt-auto">
+                  <a
+                    href="/documentos/lei-complementar-n-1058-folga-doacao-ir.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-yellow text-slate-900 font-black text-sm px-6 py-3 hover:bg-brand-yellow/90 transition-colors shadow-lg shadow-brand-yellow/20 w-full"
+                  >
+                    <FileText className="w-4 h-4 shrink-0" aria-hidden />
+                    Acesse a lei
+                    <ExternalLink className="w-3 h-3 shrink-0 opacity-80" aria-hidden />
+                  </a>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
